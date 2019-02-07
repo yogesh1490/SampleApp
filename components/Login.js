@@ -15,18 +15,21 @@ export default class Login extends Component {
     password: ""
   };
 
+  // static navigationOptions = {
+  //   title: "React",
+  //   headerStyle: {
+  //     backgroundColor: "#FFA500"
+  //   },
+  //   headerTintColor: "#fff",
+  //   headerTitleStyle: {
+  //     fontWeight: "bold"
+  //   }
+  // };
   static navigationOptions = {
-    title: "React",
-    headerStyle: {
-      backgroundColor: "#FFA500"
-    },
-    headerTintColor: "#fff",
-    headerTitleStyle: {
-      fontWeight: "bold"
-    }
+    header: null ,
   };
-
   render() {
+
     return (
       <View style={styles.container}>
         <Image
