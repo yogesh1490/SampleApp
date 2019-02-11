@@ -56,6 +56,7 @@ export default class Login extends Component {
         />
 
         <View style={styles.buttonContainer}>
+        
           <Button
             title="Login"
             color="#FF8C00"
@@ -84,7 +85,7 @@ const styles = StyleSheet.create({
     paddingTop: 50,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#F5FCFF"
+   // backgroundColor: "#F5FCFF"
   },
   welcome: {
     fontSize: 20,
@@ -109,9 +110,12 @@ const styles = StyleSheet.create({
     fontFamily: "avenir book"
   },
   buttonContainer: {
-    height: 50,
     width: 300,
     borderRadius: 10,
-    margin: 30
+    margin: 30,
+    marginTop:60,
+    borderWidth: 1,
+    backgroundColor: '#68a0cf',
+    overflow: 'hidden'
   }
 });

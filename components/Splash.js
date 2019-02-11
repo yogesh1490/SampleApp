@@ -34,7 +34,7 @@ const SetSplashImage = () => (
     // />
 
     <Image style={{width: '100%', height: '100%'}}
-            source={{uri :'asset:/splash.png'}}  />
+            source={{uri :'asset:/splash.jpg'}}  />
  )
 
 const styles= StyleSheet.create({
