@@ -17,9 +17,15 @@ const TabNavigator = createMaterialTopTabNavigator(
     Settings: Settings
   },
   {
+    // tabBarPosition: 'bottom',
+    // swipeEnabled: false,
     tabBarOptions: {
       activeTintColor: "#000",
       inactiveTintColor: "gray",
+      labelStyle: {
+        fontSize: 14,
+        padding: 2
+      },
       style: {
         backgroundColor: "#fff"
       },
@@ -35,13 +41,16 @@ const DrawerNavigator = createDrawerNavigator(
     Home: {
       screen: TabNavigator
     },
-    About: About
+    About: About,
+    Settings: Settings
   },
- 
+  {
+    gesturesEnabled: false
+  },
   {
     initialRouteName: "Home",
     contentComponent: DrawerScreen,
-    drawerWidth: 300,
+    drawerWidth: 300
   }
 );
 
@@ -53,7 +62,6 @@ const StackNavigator = createStackNavigator(
       screen: DrawerNavigator
     }
   },
-  
   {
     navigationOptions: ({ navigation }) => ({
       title: "ReactNavigation", // Title to appear in status bar

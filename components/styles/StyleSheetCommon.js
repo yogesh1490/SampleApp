@@ -3,37 +3,39 @@ import { StyleSheet, Platform } from "react-native";
 export default (styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: "row",
-    padding: 2,
+    flexDirection: "column",
+    padding: 4,
     marginTop: 4,
     marginBottom: 4,
     borderRadius: 5,
     borderColor: "red",
     backgroundColor: "#FFF",
+    alignItems: 'center',
     elevation: 1
   },
   title: {
-    fontSize: 16,
-    color: "#000"
+    fontSize: 18,
+    color: "#000",
+    marginTop:10
   },
   container_text: {
-    flex: 1,
-    flexDirection: "column",
-    marginLeft: 12,
-    justifyContent: "center"
+    justifyContent: "center",
+    alignItems: 'center'
   },
   description: {
-    fontSize: 11,
+    fontSize: 15,
     textAlign:"justify",
+    marginTop:10
   },
   photo: {
-    height: 50,
-    width: 50
+    height: 300,
+    width: '90%',
+    
   },
   heading: {
     fontSize: 20,
     textAlign: "center",
-    margin: 10
+  
   },
   menuItem: {
     padding: 10,

@@ -25,11 +25,11 @@ class DrawerScreen extends Component {
             <View style={styles.menuItem}>
               <Text onPress={this.navigateToScreen("About")}>About</Text>
             </View>
-            {/* <View style={styles.menuItem}>
-              <Text onPress={this.navigateToScreen('Contact')}>
-              Contact
+            <View style={styles.menuItem}>
+              <Text onPress={this.navigateToScreen('Settings')}>
+              Settings
               </Text>
-            </View> */}
+            </View>
           </View>
         </ScrollView>
       </View>
