@@ -10,21 +10,21 @@ import {
 } from "react-native";
 
 export default class Login extends Component {
-  state = {
-    email: "",
-    password: ""
-  };
-
-  // static navigationOptions = {
-  //   title: "React",
-  //   headerStyle: {
-  //     backgroundColor: "#FFA500"
-  //   },
-  //   headerTintColor: "#fff",
-  //   headerTitleStyle: {
-  //     fontWeight: "bold"
-  //   }
+  // state = {
+  //   email: "",
+  //   password: ""
   // };
+
+  constructor(props) {
+    // Required step: always call the parent class' constructor
+    super(props);
+
+    this.state = {
+      email: "",
+      password: ""
+    }
+    }
+
   static navigationOptions = {
     header: null ,
   };
@@ -68,6 +68,8 @@ export default class Login extends Component {
   }
 
   _submitForm = () => {
+
+
     if (this.state.email == this.state.password) {
       console.log("Success");
      // alert('Success')

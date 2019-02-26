@@ -10,11 +10,12 @@ import { Image, TouchableOpacity } from "react-native";
 import Home from "../components/Home";
 import Settings from "../components/Settings";
 import About from "../components/About";
+import Map from "../components/Map";
 
 const TabNavigator = createMaterialTopTabNavigator(
   {
     Home: Home,
-    Settings: Settings
+    Map: Map
   },
   {
     // tabBarPosition: 'bottom',
@@ -86,6 +87,8 @@ const StackNavigator = createStackNavigator(
 );
 
 const MenuImage = ({ navigation }) => {
+
+  
   if (!navigation.state.isDrawerOpen) {
     console.log("menu-button");
     return <Image source={require("../components/images/menu-button.png")} />;

@@ -6,6 +6,7 @@ import {
   StyleSheet,
   Text,
   View,
+  propTypes,
   Image,
   TouchableOpacity,
   StatusBar
@@ -15,7 +16,7 @@ export default class SettingsScreen extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <Text>Settings!</Text>
+        <Text>{this.props.message}</Text>
         <Button
           title="Go to Home"
           onPress={() => this.props.navigation.navigate("Home")}
@@ -23,4 +24,11 @@ export default class SettingsScreen extends React.Component {
       </View>
     );
   }
+}
+// SettingsScreen.propTypes={
+//   message:propTypes.string
+// }
+
+SettingsScreen.defaultProps={
+  message:'Its Settings Screen'
 }

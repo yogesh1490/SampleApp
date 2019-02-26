@@ -11,7 +11,8 @@ const AppNavigator = createStackNavigator(
     Login,
     Tab,
     DrawerScreen,
-    About
+    About,
+    Map
   },
   { initialRouteName: "Splash" }
 );
