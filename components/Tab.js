@@ -23,6 +23,7 @@ const TabNavigator = createMaterialTopTabNavigator(
     tabBarOptions: {
       activeTintColor: "#000",
       inactiveTintColor: "gray",
+      upperCaseLabel: false,
       labelStyle: {
         fontSize: 14,
         padding: 2
@@ -40,7 +41,10 @@ const TabNavigator = createMaterialTopTabNavigator(
 const DrawerNavigator = createDrawerNavigator(
   {
     Home: {
-      screen: TabNavigator
+      screen: TabNavigator,
+      navigationOptions: {
+        header: null
+       }
     },
     About: About,
     Settings: Settings

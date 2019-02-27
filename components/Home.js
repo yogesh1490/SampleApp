@@ -12,10 +12,24 @@ import {
 } from "react-native";
 
 export default class HomeScreen extends Component {
-  state = {
-    data: ""
-  };
+  // state = {
+  //   data: ""
+  // };
+
+  constructor(props){
+    super(props);
+    this.state = {
+      data: ""
+    }
+    console.log('constructor called');
+  }
+
+  componentWillMount(){
+    console.log('componentWillMount called');
+  }
+
   componentDidMount = () => {
+    console.log('componentDidMount called');
     fetch("https://api.androidhive.info/json/movies.json", {
       method: "GET"
     })
@@ -31,9 +45,9 @@ export default class HomeScreen extends Component {
       });
   };
   render() {
-
-
+    console.log('render called');
     const CustomRow = ({ title, description, image_url }) => (
+      
       <View style={styles.container}>
         <Image source={{ uri: image_url }} style={styles.photo} />
         <View style={styles.container_text}>
