@@ -11,11 +11,14 @@ import Home from "../components/Home";
 import Settings from "../components/Settings";
 import About from "../components/About";
 import Map from "../components/Map";
+import Viewss from "../components/Viewss";
+
 
 const TabNavigator = createMaterialTopTabNavigator(
   {
     Home: Home,
-    Map: Map
+    Map: Map,
+    Viewss:Viewss
   },
   {
     // tabBarPosition: 'bottom',

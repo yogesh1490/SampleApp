@@ -4,6 +4,7 @@ import Login from "./components/Login";
 import Tab from "./components/Tab";
 import About from "./components/About";
 import DrawerScreen from "./components/DrawerScreen";
+//import Viewss from "./components/Viewss";
 
 const AppNavigator = createStackNavigator(
   {
