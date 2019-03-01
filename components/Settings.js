@@ -16,7 +16,16 @@ export default class SettingsScreen extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <Text>{this.props.message}</Text>
+        <Text>Its Settings Screen</Text>
+
+        <Text style={styles.textStyle}>
+          Name = {this.props.navigation.state.params.NameOBJ}
+        </Text>
+ 
+        <Text style={styles.textStyle}>
+          Number = {this.props.navigation.state.params.NumberOBJ}
+        </Text>
+
         <Button
           title="Go to Home"
           onPress={() => this.props.navigation.navigate("Home")}
@@ -30,5 +39,6 @@ export default class SettingsScreen extends React.Component {
 // }
 
 SettingsScreen.defaultProps={
-  message:'Its Settings Screen'
+  NameOBJ:'',
+  NumberOBJ:''
 }

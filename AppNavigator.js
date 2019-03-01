@@ -4,7 +4,10 @@ import Login from "./components/Login";
 import Tab from "./components/Tab";
 import About from "./components/About";
 import DrawerScreen from "./components/DrawerScreen";
+import SettingsScreen from "./components/Settings";
 //import Viewss from "./components/Viewss";
+import InputText from "./components/InputText";
+import OutputText from "./components/OutputText";
 
 const AppNavigator = createStackNavigator(
   {
@@ -13,7 +16,10 @@ const AppNavigator = createStackNavigator(
     Tab,
     DrawerScreen,
     About,
-    Map
+    Map,
+    SettingsScreen,
+    InputText,
+    OutputText
   },
   { initialRouteName: "Splash" }
 );

@@ -3,10 +3,11 @@ import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,
+  TouchableOpacity
 } from 'react-native';
 import styles from "./styles/StyleSheetCommon";
-import Settings from "./Settings";
+import InputText from "./InputText";
 
 export default class About extends React.Component{
   render() {
@@ -15,9 +16,20 @@ export default class About extends React.Component{
         <Text style={styles.heading}>
           About
         </Text>
-        <Settings message={'Seeting screen Open in About Screen!!!'}/>
+
+        <TouchableOpacity onPress={this.PassIntent} activeOpacity={0.7} style={styles.button} >
+ 
+          <Text style={styles.buttonText}> Input Text Screen!!!</Text>
+ 
+        </TouchableOpacity>
       </View>
     );
+  }
+
+  PassIntent = () => {
+ 
+    this.props.navigation.navigate('InputText');
+
   }
 }
 

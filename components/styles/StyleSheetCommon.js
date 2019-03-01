@@ -43,5 +43,13 @@ export default (styles = StyleSheet.create({
     marginBottom: 4,
     borderWidth: 0.5,
     borderColor: "#d6d7da"
+  } ,
+  button: {
+    width: '90%',
+    height: 40,
+    padding: 10,
+    backgroundColor: '#4CAF50',
+    borderRadius: 8,
+    marginTop: 15
   }
 }));
