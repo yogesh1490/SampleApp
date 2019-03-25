@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import { NavigationActions } from "react-navigation";
 import PropTypes from "prop-types";
-import { ScrollView, Text, View, StyleSheet } from "react-native";
+import { ScrollView, Text, View, StyleSheet } from 'react-native';
 import { DrawerActions } from "react-navigation";
 
 

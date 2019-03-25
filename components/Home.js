@@ -8,7 +8,8 @@ import {
   View,
   Image,
   TouchableOpacity,
-  StatusBar
+  StatusBar,
+  Platform
 } from "react-native";
 
 export default class HomeScreen extends Component {
@@ -16,26 +17,32 @@ export default class HomeScreen extends Component {
   //   data: ""
   // };
 
-  constructor(props){
+  static navigationOptions = {
+    header: "none"
+  };
+
+  constructor(props) {
     super(props);
     this.state = {
       data: ""
-    }
-    console.log('constructor called');
+    };
+    console.log("constructor called");
   }
 
-  componentWillMount(){
-    console.log('componentWillMount called');
+  componentWillMount() {
+    console.log("componentWillMount called");
   }
 
   componentDidMount = () => {
-    console.log('componentDidMount called');
+    console.log("componentDidMount called");
     fetch("https://api.androidhive.info/json/movies.json", {
       method: "GET"
     })
       .then(response => response.json())
+
       .then(responseJson => {
         console.log(responseJson);
+
         this.setState({
           data: responseJson
         });
@@ -45,9 +52,8 @@ export default class HomeScreen extends Component {
       });
   };
   render() {
-    console.log('render called');
+    console.log("render called");
     const CustomRow = ({ title, description, image_url }) => (
-      
       <View style={styles.container}>
         <Image source={{ uri: image_url }} style={styles.photo} />
         <View style={styles.container_text}>
@@ -56,6 +62,7 @@ export default class HomeScreen extends Component {
         </View>
       </View>
     );
+  
 
     const CustomListview = ({ itemList }) => (
       <View style={styles.container}>

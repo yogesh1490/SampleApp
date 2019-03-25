@@ -1,64 +1,88 @@
-import React from "react";
+import React, { Component } from 'react';
 import DrawerScreen from "../components/DrawerScreen";
 import {
   createStackNavigator,
   createDrawerNavigator,
+  createAppContainer,
   createMaterialTopTabNavigator,
   DrawerActions
 } from "react-navigation";
-import { Image, TouchableOpacity } from "react-native";
+import { View,Image, TouchableOpacity } from "react-native";
 import Home from "../components/Home";
 import Settings from "../components/Settings";
 import About from "../components/About";
 import Map from "../components/Map";
-import Viewss from "../components/Viewss";
+import Views from "../components/Views";
+import Employee from "../components/Employee";
 
+
+// export default class Tab extends React.Component{
+//   static navigationOptions = {
+//     header: null ,
+//   };
+//   render() {
+//     return (
+//    <AppContainer/>
+//     );
+ 
+//   }
+// }
 
 const TabNavigator = createMaterialTopTabNavigator(
   {
     Home: Home,
-    Map: Map,
-    Viewss:Viewss
+    Employee: Employee,
+    Views:Views,
+    About: About
   },
+
+//   {
+//     header: null,
+//  },
   {
     // tabBarPosition: 'bottom',
     // swipeEnabled: false,
     tabBarOptions: {
-      activeTintColor: "#000",
-      inactiveTintColor: "gray",
+      activeTintColor: "#fff",
+      inactiveTintColor: "#000",
       upperCaseLabel: false,
+  
       labelStyle: {
         fontSize: 14,
         padding: 2
       },
       style: {
-        backgroundColor: "#fff"
+        backgroundColor: "#f05555"
       },
       indicatorStyle: {
-        backgroundColor: "#000"
+        backgroundColor: "#fff"
       }
     }
   }
 );
-
+//const AppContainer = createAppContainer(TabNavigator);
 const DrawerNavigator = createDrawerNavigator(
   {
     Home: {
       screen: TabNavigator,
-      navigationOptions: {
-        header: null
-       }
+      navigationOptions:{
+        header: null,
+      }
     },
     About: About,
     Settings: Settings
   },
   {
-    gesturesEnabled: false
+    gesturesEnabled: true
   },
+
   {
     initialRouteName: "Home",
     contentComponent: DrawerScreen,
-    drawerWidth: 300
+    drawerWidth: 300,
+    style: {
+      backgroundColor: "blue"
+    },
   }
 );
 
@@ -67,7 +91,10 @@ const StackNavigator = createStackNavigator(
     //important: key and screen name (i.e. DrawerNavigator) should be same while using the drawer navigator inside stack navigator.
 
     DrawerNavigator: {
-      screen: DrawerNavigator
+      screen: DrawerNavigator,
+      navigationOptions:{
+        header: null,
+      }
     }
   },
   {
@@ -83,7 +110,7 @@ const StackNavigator = createStackNavigator(
         </TouchableOpacity>
       ),
       headerStyle: {
-        backgroundColor: "#333"
+        backgroundColor: "#f05555"
       },
       headerTintColor: "#fff",
       headerTitleStyle: {

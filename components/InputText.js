@@ -64,8 +64,7 @@ export default class InputText extends Component {
           <Text style={styles.buttonText}> Send TextInput Value To Next Activity </Text>
  
         </TouchableOpacity>
- 
- 
+        
       </View>
  
     );

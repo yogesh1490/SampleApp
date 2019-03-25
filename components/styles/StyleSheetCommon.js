@@ -48,7 +48,7 @@ export default (styles = StyleSheet.create({
     width: '90%',
     height: 40,
     padding: 10,
-    backgroundColor: '#4CAF50',
+    backgroundColor: '#f05555',
     borderRadius: 8,
     marginTop: 15
   }

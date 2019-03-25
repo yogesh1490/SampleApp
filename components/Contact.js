@@ -11,7 +11,7 @@ export default class Contact extends Component{
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.heading}>
+           <Text style={styles.heading}>
         Contact
         </Text>
       </View>

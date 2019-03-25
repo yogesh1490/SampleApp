@@ -6,7 +6,8 @@ import {
   Image,
   Button,
   View,
-  Alert
+  Alert,
+  AsyncStorage 
 } from "react-native";
 
 export default class Login extends Component {
@@ -23,7 +24,7 @@ export default class Login extends Component {
       email: "",
       password: ""
     }
-    }
+   }
 
   static navigationOptions = {
     header: null ,
@@ -69,7 +70,7 @@ export default class Login extends Component {
 
   _submitForm = () => {
 
-
+  
     if (this.state.email == this.state.password) {
       console.log("Success");
      // alert('Success')
@@ -80,6 +81,13 @@ export default class Login extends Component {
     }
   };
 }
+_storeData = async () => {
+  try {
+    await AsyncStorage.setItem('email', 'I like to save it.');
+  } catch (error) {
+    // Error saving data
+  }
+};
 
 const styles = StyleSheet.create({
   container: {

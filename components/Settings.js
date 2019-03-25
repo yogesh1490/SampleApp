@@ -12,24 +12,26 @@ import {
   StatusBar
 } from "react-native";
 
-export default class SettingsScreen extends React.Component {
+export default class SettingsScreen extends Component {
+  state = {
+    myState1: 'Android',
+    myState2: 'I am Android developer'
+ }
+ updateState = () =>{
+  this.setState({ myState2: 'I am iOS developer' })
+ }
+
   render() {
     return (
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <Text>Its Settings Screen</Text>
 
         <Text style={styles.textStyle}>
-          Name = {this.props.navigation.state.params.NameOBJ}
-        </Text>
+        {this.state.myState1} 
+        </Text> 
  
-        <Text style={styles.textStyle}>
-          Number = {this.props.navigation.state.params.NumberOBJ}
-        </Text>
-
-        <Button
-          title="Go to Home"
-          onPress={() => this.props.navigation.navigate("Home")}
-        />
+        <Text onPress = {this.updateState}>
+               {this.state.myState2}
+            </Text>
       </View>
     );
   }

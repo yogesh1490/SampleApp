@@ -8,7 +8,7 @@ export default class Map extends Component {
       //  <View style={styles.container}>
       <MapView
         style={styles.map}
-        showsUserLocation={false}
+        showsUserLocation={true}
         followUserLocation={false}
         zoomEnabled={true}
       />
