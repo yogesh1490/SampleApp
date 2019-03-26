@@ -12,7 +12,6 @@ export default class OutputText extends Component {
     static navigationOptions =
       {
         title: 'Developer'
-   
       };
    
     render() {

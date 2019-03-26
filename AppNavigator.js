@@ -11,6 +11,7 @@ import OutputText from "./components/OutputText";
 import NavigationDrawerScreen from "./components/NavigationDrawerScreen";
 import Employee from "./components/Employee";
 import NumEmployee from "./components/NumEmployee";
+import UpdateEmployee from "./components/UpdateEmployee";
 
 const AppNavigator = createStackNavigator(
   {
@@ -27,6 +28,7 @@ const AppNavigator = createStackNavigator(
     Employee,
     NavigationDrawerScreen,
     NumEmployee,
+    UpdateEmployee,
   },
   { initialRouteName: "Splash"}
 );
