@@ -69,8 +69,10 @@ const DrawerNavigator = createDrawerNavigator(
         header: null,
       }
     },
+   
     About: About,
-    Settings: Settings
+    Settings: Settings,
+
   },
   {
     gesturesEnabled: true

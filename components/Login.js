@@ -7,7 +7,7 @@ import {
   Button,
   View,
   Alert,
-  AsyncStorage 
+  AsyncStorage
 } from "react-native";
 
 export default class Login extends Component {
@@ -23,14 +23,13 @@ export default class Login extends Component {
     this.state = {
       email: "",
       password: ""
-    }
-   }
+    };
+  }
 
   static navigationOptions = {
-    header: null ,
+    header: null
   };
   render() {
-
     return (
       <View style={styles.container}>
         <Image
@@ -57,7 +56,6 @@ export default class Login extends Component {
         />
 
         <View style={styles.buttonContainer}>
-        
           <Button
             title="Login"
             color="#FF8C00"
@@ -69,21 +67,21 @@ export default class Login extends Component {
   }
 
   _submitForm = () => {
-
-  
     if (this.state.email == this.state.password) {
       console.log("Success");
-     // alert('Success')
+      // alert('Success')
+
+
       this.props.navigation.replace("Tab");
     } else {
       console.log("Failure");
-      alert('Failure')
+      alert("Failure");
     }
   };
 }
 _storeData = async () => {
   try {
-    await AsyncStorage.setItem('email', 'I like to save it.');
+    await AsyncStorage.setItem("email", "I like to save it.");
   } catch (error) {
     // Error saving data
   }
@@ -94,8 +92,8 @@ const styles = StyleSheet.create({
     // flex: 1,
     paddingTop: 50,
     justifyContent: "center",
-    alignItems: "center",
-   // backgroundColor: "#F5FCFF"
+    alignItems: "center"
+    // backgroundColor: "#F5FCFF"
   },
   welcome: {
     fontSize: 20,
@@ -123,9 +121,9 @@ const styles = StyleSheet.create({
     width: 300,
     borderRadius: 10,
     margin: 30,
-    marginTop:60,
+    marginTop: 60,
     borderWidth: 1,
-    backgroundColor: '#68a0cf',
-    overflow: 'hidden'
+    backgroundColor: "#68a0cf",
+    overflow: "hidden"
   }
 });

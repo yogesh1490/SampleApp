@@ -1,6 +1,7 @@
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import Splash from "./components/Splash";
 import Login from "./components/Login";
+import Home from "./components/Home";
 import Tab from "./components/Tab";
 import About from "./components/About";
 import DrawerScreen from "./components/DrawerScreen";
@@ -17,6 +18,7 @@ const AppNavigator = createStackNavigator(
   {
     Splash,
     Login,
+    Home,
     Tab,
     DrawerScreen,
     About,

@@ -30,6 +30,11 @@ class DrawerScreen extends Component {
               Settings
               </Text>
             </View>
+            <View style={styles.menuItem}>
+              <Text>
+              Logout
+              </Text>
+            </View>
           </View>
         </ScrollView>
       </View>
@@ -45,7 +50,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#fff"
+    backgroundColor: "#d6d7da"
   },
   heading: {
     fontSize: 20,

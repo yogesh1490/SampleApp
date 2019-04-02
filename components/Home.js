@@ -18,7 +18,7 @@ export default class HomeScreen extends Component {
   // };
 
   static navigationOptions = {
-    header: "none"
+    header: 'none'
   };
 
   constructor(props) {

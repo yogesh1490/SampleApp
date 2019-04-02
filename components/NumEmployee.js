@@ -9,6 +9,8 @@ import {
   TouchableHighlight,
   ToastAndroid,
   Alert,
+  Image,
+  TextInput,
   AppState
 } from "react-native";
 
@@ -26,17 +28,16 @@ export default class NumEmployee extends React.Component {
     headerTintColor: "#fff"
   };
 
-  
   constructor(props) {
     super(props);
     this.state = {
       FlatListItems: []
     };
 
-
     db.transaction(tx => {
       tx.executeSql("SELECT * FROM table_user", [], (tx, results) => {
         var temp = [];
+
         for (let i = 0; i < results.rows.length; ++i) {
           temp.push(results.rows.item(i));
         }
@@ -54,11 +55,9 @@ export default class NumEmployee extends React.Component {
     );
   };
 
-  
   render() {
     return (
       <View style={{ backgroundColor: "#ffcccc", height: "100%" }}>
-  
         <FlatList
           data={this.state.FlatListItems}
           // ItemSeparatorComponent={this.ListViewItemSeparator}
@@ -74,14 +73,24 @@ export default class NumEmployee extends React.Component {
                 key={item.user_id}
                 style={{ paddingRight: 20, paddingLeft: 20, paddingTop: 20 }}
               >
+                <Image
+                  source={{
+                    uri: 'file:/storage/emulated/0/Pictures/myImage.jpg'
+                  }}
+                  style={{height:200, width:200}}
+                />
+
                 {/* <Text>Id: {item.user_id}</Text> */}
                 <Text style={styles.textUsernameStyle}>
                   Name: {item.user_name}
                 </Text>
+
                 <Text style={styles.textContactStyle}>
                   Contact: {item.user_contact}
                 </Text>
+
                 <Text style={styles.textPostStyle}>{item.user_address}</Text>
+
                 <View
                   style={{
                     backgroundColor: "#ff0000",
@@ -108,16 +117,19 @@ export default class NumEmployee extends React.Component {
       //body
       "Do you want to modify the DB?",
       [
-        { text: "Delete", onPress:  this.deleteItem.bind(this, item) },
-        { text: "Update", onPress:  this.updateItem.bind(this, item)  },
-        { text: "cancel", onPress: () => ToastAndroid.show('cancel Results', ToastAndroid.SHORT) }
+        { text: "Delete", onPress: this.deleteItem.bind(this, item) },
+        { text: "Update", onPress: this.updateItem.bind(this, item) },
+        {
+          text: "cancel",
+          onPress: () => ToastAndroid.show("cancel Results", ToastAndroid.SHORT)
+        }
       ],
       { cancelable: true }
     );
   }
 
   deleteItem(item) {
-    ToastAndroid.show('deleteItem Results', ToastAndroid.SHORT);
+    ToastAndroid.show("deleteItem Results", ToastAndroid.SHORT);
     console.log("deleteItem Results ", item.user_id);
     var that = this;
     //  const { input_user_id } = this.state;
@@ -127,14 +139,12 @@ export default class NumEmployee extends React.Component {
         [item.user_id],
         (tx, results) => {
           console.log("Results", results.rowsAffected);
-        
-          if (results.rowsAffected > 0) {
 
-            var FlatListItems = [...this.state.FlatListItems]
+          if (results.rowsAffected > 0) {
+            var FlatListItems = [...this.state.FlatListItems];
             let index = FlatListItems.indexOf(item);
             FlatListItems.splice(index, 1);
             this.setState({ FlatListItems });
-
 
             // Alert.alert(
             //   "Success",
@@ -155,12 +165,12 @@ export default class NumEmployee extends React.Component {
     });
   }
   updateItem(item) {
-    var id=item.user_id;
-    ToastAndroid.show('updateItem Results', ToastAndroid.SHORT);
-    this.props.navigation.navigate('UpdateEmployee', {
+    var id = item.user_id;
+    ToastAndroid.show("updateItem Results", ToastAndroid.SHORT);
+    this.props.navigation.navigate("UpdateEmployee", {
       employeeIdOBJ: id
     });
-  };
+  }
 }
 
 const styles = StyleSheet.create({
@@ -178,10 +188,15 @@ const styles = StyleSheet.create({
     color: "#ff0000"
   },
   button: {
-   // borderWidth: 1,
-    backgroundColor: '#F5A9A9',
-  
-}
-
-  
+    // borderWidth: 1,
+    backgroundColor: "#F5A9A9"
+  },
+  TextInputStyleClass: {
+    textAlign: "center",
+    height: 40,
+    borderWidth: 1,
+    borderColor: "#009688",
+    borderRadius: 7,
+    backgroundColor: "#FFFFFF"
+  }
 });
